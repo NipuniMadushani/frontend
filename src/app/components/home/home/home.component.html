@@ -1,0 +1,277 @@
+<div *ngIf="info.token; else loggedOut">
+  <h5 class="text-primary">Your Information</h5>
+  <p>
+    <strong>Username:</strong> {{info.username}}<br/>
+    <strong>Roles:</strong> {{info.authorities}}<br />
+    <strong>Token:</strong> {{info.token}}.
+  </p>
+  <button class="btn btn-secondary" (click)="logout()">Logout</button>
+</div>
+
+<ng-template #loggedOut>
+
+  <!--Please login.-->
+  <div class="alert alert-danger" style="width: 300px">
+    <strong>Hey,</strong>please login to purchase items
+  </div>
+
+</ng-template>
+
+
+<div class="row  marleft" style="margin-top:40px;margin-left:40px">
+
+  <div class="col m3 s12 widthfix" style="min-height: 100px; margin-top:40px;" >
+    <div class="col m12 s12 white mat-elevation-z4" style="border-radius:4px;">
+
+      <div class="col m4 s4 mat-elevation-z8 " style="margin-top:-20px; border-radius:4px; background: linear-gradient(60deg,#ffa726,#fb8c00)">
+        <p class="center white-text" >
+          <i class="fa fa-laptop fa-2x fa-spin"></i>
+        </p>
+      </div>
+
+      <div class="col m8 s8">
+
+        <img src="../../assets/81kctE-tR4L._SL1500_.jpg" style="width: 200px;height: 150px">
+      </div>
+      <div class="col m12 s12" style="border-top:1px solid #d3d3d3;">
+        <p class="center" style="margin-top:2px; margin-bottom: 2px"><i class="red-text fa fa-exclamation-triangle" style="alignment: center">Laptop</i></p>
+      </div>
+    </div>
+  </div>
+  <div class="col m3 s12" style="min-height: 100px; margin-top:40px;" >
+    <div class="col m12 s12 white mat-elevation-z4" style="border-radius:4px;">
+      <div class="col m4 s4 mat-elevation-z8 " style="margin-top:-20px; border-radius:4px; background: linear-gradient(60deg,#66bb6a,#43a047)">
+        <p class="center white-text" >
+          <i class="	fa fa-television fa-2x fa-spin"></i>
+        </p>
+      </div>
+      <div class="col m8 s8">
+
+        <img src="../../assets/911NRkSMp3L._SX569_.jpg" style="width: 200px;height: 150px">
+        <!--<h5 style="text-align:right; margin-bottom:8px; margin-top: 2px">$34,245 </h5>-->
+      </div>
+      <div class="col m12 s12" style="border-top:1px solid #d3d3d3;">
+        <p class="center" style="margin-top:2px; margin-bottom: 2px"><i class="red-text fa fa-calendar ">Television</i> </p>
+      </div>
+    </div>
+  </div>
+  <div class="col m3 s12" style="min-height: 100px; margin-top:40px;" >
+    <div class="col m12 s12 white mat-elevation-z4" style="border-radius:4px;">
+      <div class="col m4 s4 mat-elevation-z8 " style="margin-top:-20px; border-radius:4px; background: linear-gradient(60deg,#ef5350,#e53935)">
+        <p class="center white-text" >
+          <i class="fa fa-mobile-phone  fa-2x fa-spin"></i>
+        </p>
+      </div>
+      <div class="col m8 s8">
+        <img src="../../assets/download.jpg" style="width: 200px;height: 150px">
+      </div>
+      <div class="col m12 s12" style="border-top:1px solid #d3d3d3;">
+        <p class="center" style="margin-top:2px; margin-bottom: 2px"><i class="red-text fa fa-tag">Mobile</i> </p>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
+
+<br>
+<hr>
+
+<img class="d-block w-100" src="https://www.rightway.lk/img/logo/bestvalue2.png" >
+
+<div class="row marleft" style="margin-left: 40px" >
+  <div class="col m4 s12 " style="margin-top:40px">
+    <div class="col m12 s12 white mat-elevation-z4" style="border-radius:4px; width: 300px">
+      <div class="col m12 s12 mat-elevation-z8" style=" margin-top: -30px; border-radius:4px">
+        <p class="center" style="margin-top:2px; margin-bottom: 2px"><i class="red-text fa fa-money"></i>&nbsp;&nbsp;32,000/= </p>
+        <img src="../../assets/galaxy-s7-edge.png" style="width: 200px;height:200px">
+        <!--<chart [type]="type" [data]="data" [options]="options"></chart>-->
+      </div>
+      <div class="col m12 s12">
+        <h6>Samsung s7</h6>
+        <!--<h6>+55% Increase in Todays Sale</h6>-->
+      </div>
+
+      <div class="col m12 s12" style="border-top:1px solid #d3d3d3">
+        <p class="center" style="margin-top:2px; margin-bottom: 2px"><i class="material-icons left">history</i>A smart samsung s7 phone by  samsung</p>
+      </div>
+    </div>
+  </div>
+  <div class="col m4 s12 " style="margin-top:40px;margin-left: -10px" >
+    <div class="col m12 s12 white mat-elevation-z4" style="border-radius:4px; width: 300px">
+      <div class="col m12 s12 mat-elevation-z8" style=" margin-top: -30px; border-radius:4px">
+        <p class="center" style="margin-top:2px; margin-bottom: 2px"><i class="red-text fa fa-money"></i>&nbsp;&nbsp;48,000/= </p>
+
+        <img src="../../assets/Dell+Latitude+E7450+Price+in+Pakistan,+Specifications,+Features,+Reviews_-_15227.png" style="width: 200px;height:200px">
+      </div>
+      <div class="col m12 s12">
+
+        <h6>Dell Latitude </h6>
+      </div>
+
+      <div class="col m12 s12" style="border-top:1px solid #d3d3d3;">
+        <p class="center" style="margin-top:2px; margin-bottom: 2px"><i class="material-icons left">history</i>This is  one of the best laptop serious </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col m4 s12 " style="margin-top:40px">
+    <div class="col m12 s12 white mat-elevation-z4" style="border-radius:4px;width: 300px;margin-left:-10px">
+      <div class="col m12 s12 mat-elevation-z8" style=" margin-top: -30px; border-radius:4px">
+        <!--<chart [type]="type" [data]="data" [options]="options"></chart>-->
+        <p class="center" style="margin-top:2px; margin-bottom: 2px"><i class="red-text fa fa-money"></i>&nbsp;&nbsp;56,000/= </p>
+        <img src="../../assets/google-pixel-1556708999.png" style="width: 200px;height:200px">
+
+      </div>
+      <div class="col m12 s12">
+        <h6>Google Pixel </h6>
+
+      </div>
+
+      <div class="col m12 s12" style="border-top:1px solid #d3d3d3;">
+        <p class="center" style="margin-top:2px; margin-bottom: 2px"><i class="material-icons left">history</i>This is the best android  phone available in the market right now</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!--<div class="col m4 s12 " style="margin-top:40px">-->
+    <!--<div class="col m12 s12 white mat-elevation-z4" style="border-radius:4px;width: 300px;;margin-left: -70px">-->
+      <!--<div class="col m12 s12 mat-elevation-z8" style=" margin-top: -30px; border-radius:4px">-->
+        <!--&lt;!&ndash;<chart [type]="type" [data]="data" [options]="options"></chart>&ndash;&gt;-->
+        <!--<p class="center" style="margin-top:2px; margin-bottom: 2px"><i class="red-text fa fa-money"></i>&nbsp;&nbsp;175,000/= </p>-->
+        <!--<img src="../../assets/5999102cv11d.jpg" style="width: 200px;height:200px">-->
+
+      <!--</div>-->
+      <!--<div class="col m12 s12">-->
+        <!--<h6>iPhone 5s</h6>-->
+
+      <!--</div>-->
+
+      <!--<div class="col m12 s12" style="border-top:1px solid #d3d3d3;">-->
+        <!--<p class="center" style="margin-top:2px; margin-bottom: 2px"><i class="material-icons left">history</i>This is the best iphone available in the market right now</p>-->
+      <!--</div>-->
+    <!--</div>-->
+
+  <!--</div>-->
+
+  <mdb-carousel style="margin-top: 120px" class="carousel slide carousel-fade" [animation]="'fade'">
+    <mdb-carousel-item>
+      <div class="view w-100">
+        <img class="d-block w-100" src="https://www.rightway.lk/system/images/index/107index.jpg" alt="First slide">
+        <div class="mask rgba-black-light waves-light" mdbWavesEffect></div>
+      </div>
+      <div class="carousel-caption">
+        <h3 class="h3-responsive">Light mask</h3>
+        <p>First text</p>
+      </div>
+    </mdb-carousel-item>
+    <mdb-carousel-item>
+      <div class="view w-100">
+        <img class="d-block w-100" src="https://www.rightway.lk/system/images/index/112index.jpg" width="200px" alt="Second slide">
+        <div class="mask rgba-black-strong waves-light" mdbWavesEffect></div>
+      </div>
+      <div class="carousel-caption">
+        <h3 class="h3-responsive">Strong mask</h3>
+        <p>Secondary text</p>
+      </div>
+    </mdb-carousel-item>
+    <mdb-carousel-item>
+      <div class="view w-100">
+        <img class="d-block w-100" src="https://www.rightway.lk/system/images/index/114index.jpg" alt="Third slide">
+        <div class="mask rgba-black-slight waves-light" mdbWavesEffect></div>
+      </div>
+      <div class="carousel-caption">
+        <h3 class="h3-responsive">Slight mask</h3>
+        <p>Third text</p>
+      </div>
+    </mdb-carousel-item>
+  </mdb-carousel>
+
+</div>
+
+<br>
+<hr>
+<br>
+<!--<h3 style="margin-left: 40%">Our Most Purchased Products</h3>-->
+<img class="d-block w-100" src="https://www.rightway.lk/img/banner/Product-of-the-month.png" style="margin-left: 10px">
+
+<div class="row marleft"style="margin-left: 20px" >
+  <div class="col m4 s12 " style="margin-top:40px;margin-left: 20px">
+    <div class="col m12 s12 white mat-elevation-z4" style="border-radius:4px; width: 320px">
+      <div class="col m12 s12 mat-elevation-z8" style=" margin-top: -30px; border-radius:4px">
+        <p class="center" style="margin-top:2px; margin-bottom: 2px;margin-left: 130px"><i class="red-text fa fa-money"></i>&nbsp;&nbsp;32,000/= </p>
+        <img src="../../assets/galaxy-s7-edge.png" style="width: 200px;height:200px">
+        <!--<chart [type]="type" [data]="data" [options]="options"></chart>-->
+      </div>
+      <div class="col m12 s12">
+        <h6>samsung s7</h6>
+        <!--<h6>+55% Increase in Todays Sale</h6>-->
+      </div>
+
+      <div class="col m12 s12" style="border-top:1px solid #d3d3d3;">
+        <p class="center" style="margin-top:2px; margin-bottom: 2px"><i class="material-icons left">history</i>A smart samsung s7 phone by  samsung</p>
+      </div>
+    </div>
+  </div>
+  <div class="col m4 s12 " style="margin-top:40px;" style="margin-top:40px;margin-left: -100px" >
+    <div class="col m12 s12 white mat-elevation-z4" style="border-radius:4px; width: 320px">
+      <div class="col m12 s12 mat-elevation-z8" style=" margin-top: -30px; border-radius:4px">
+        <p class="center" style="margin-top:2px; margin-bottom: 2px;margin-left: 130px"><i class="red-text fa fa-money"></i>&nbsp;&nbsp;48,000/= </p>
+
+        <img src="../../assets/Dell+Latitude+E7450+Price+in+Pakistan,+Specifications,+Features,+Reviews_-_15227.png" style="width: 200px;height:200px">
+      </div>
+      <div class="col m12 s12">
+
+        <h6>Dell Latitude </h6>
+      </div>
+
+      <div class="col m12 s12" style="border-top:1px solid #d3d3d3;">
+        <p class="center" style="margin-top:2px; margin-bottom: 2px"><i class="material-icons left">history</i>This is  one of the best laptop serious </p>
+      </div>
+    </div>
+  </div>
+
+  <!--<div class="col m4 s12 " style="margin-top:40px;margin-left: -100px">-->
+    <!--<div class="col m12 s12 white mat-elevation-z4" style="border-radius:4px;width: 290px">-->
+      <!--<div class="col m12 s12 mat-elevation-z8" style=" margin-top: -30px; border-radius:4px">-->
+        <!--&lt;!&ndash;<chart [type]="type" [data]="data" [options]="options"></chart>&ndash;&gt;-->
+        <!--<p class="center" style="margin-top:2px; margin-bottom: 2px;margin-left: 130px"><i class="red-text fa fa-money"></i>&nbsp;&nbsp;56,000/= </p>-->
+        <!--<img src="../../assets/google-pixel-1556708999.png" style="width: 200px;height:200px">-->
+
+      <!--</div>-->
+      <!--<div class="col m12 s12">-->
+        <!--<h6>Google Pixel </h6>-->
+
+      <!--</div>-->
+
+      <!--<div class="col m12 s12" style="border-top:1px solid #d3d3d3;">-->
+        <!--<p class="center" style="margin-top:2px; margin-bottom: 2px"><i class="material-icons left">history</i>This is the best android  phone available in the market right now</p>-->
+      <!--</div>-->
+    <!--</div>-->
+
+  <!--</div>-->
+
+  <div class="col m4 s12 " style="margin-top:40px;margin-left: -100px">
+    <div class="col m12 s12 white mat-elevation-z4" style="border-radius:4px;width: 320px">
+      <div class="col m12 s12 mat-elevation-z8" style=" margin-top: -30px; border-radius:4px">
+        <!--<chart [type]="type" [data]="data" [options]="options"></chart>-->
+        <p class="center" style="margin-top:2px; margin-bottom: 2px;margin-left: 130px"><i class="red-text fa fa-money"></i>&nbsp;&nbsp;175,000/= </p>
+        <img src="../../assets/5999102cv11d.jpg" style="width: 200px;height:200px">
+
+      </div>
+      <div class="col m12 s12">
+        <h6>iPhone 5s</h6>
+
+      </div>
+
+      <div class="col m12 s12" style="border-top:1px solid #d3d3d3;">
+        <p class="center" style="margin-top:2px; margin-bottom: 2px"><i class="material-icons left">history</i>This is the best iphone available in the market right now</p>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+

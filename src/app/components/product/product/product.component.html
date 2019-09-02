@@ -1,0 +1,83 @@
+<!--<mat-toolbar style="background: linear-gradient(#e1eec3, #7ee8fa 0%,#f05053 74%)">-->
+
+<mat-card-header xmlns="http://www.w3.org/1999/html">
+  <mat-toolbar class="toolbar">
+    <mat-card-title>Product Information</mat-card-title>
+    <span class="toolbar-spacer"></span>
+    <mat-icon (click)="onNoClick()">cancel</mat-icon>
+
+  </mat-toolbar>
+</mat-card-header>
+<mat-card-content  style="background-color: white;background-image: linear-gradient(-225deg, #5D9FFF 0%, #B8DCFF 48%, #6BBBFF 100%) ">
+  <div class="container" style="background-image: linear-gradient(-225deg, black 0%,black 48%,  beige 100%, black )">
+    <form [formGroup]="_contactForm" (submit)="onSubmit()">
+      <div class="form-group">
+        <mat-grid-list cols="2" rowHeight="300px">
+          <mat-grid-tile>
+
+            <div >
+              <img #image [src]="_contactForm.get('image').value" style="width: 250px;height:200px;margin-top: 10px" />
+            </div>
+
+
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <div class="col-md-6">
+              <label style="color: white" ><b>SubTotal :(RS)</b></label>
+              <input #total style="font-style: oblique;width: 200px" readonly type="text"  class="form-control" value="{{FullTotal}}">
+            </div>
+          </mat-grid-tile>
+          <!--<mat-grid-tile>3</mat-grid-tile>-->
+          <!--<mat-grid-tile>4</mat-grid-tile>-->
+        </mat-grid-list>
+
+
+
+        <div class="row">
+
+          <div class="col-md-6">
+            <label style="color: white" ><b>Name</b></label>
+            <input style="font-style: oblique" type="text" formControlName="name" class="form-control" readonly>
+          </div>
+          <div class="col-md-6">
+            <label style="color: white"><b>Description</b></label>
+            <textarea style="height: 100px;font-style: oblique"  type="text" formControlName="description" class="form-control" readonly></textarea>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <label style="color: white"><b>UnitPrice</b></label>
+            <input style="font-style: oblique;font-family: bold" type="number" formControlName="unitPrice" #unitPrice class="form-control" readonly>
+          </div>
+
+
+          <div class="col-md-6">
+            <label style="color: white"><b>Quantity in Available</b></label>
+            <input  #quantity id="quantity" name="quantity" type="number" formControlName="quantity" (dblclick)="calcualtePrice()"   class="form-control" minlength="1"  max="{{data.quantity}}" required>
+            <!--<div class="text-danger"*ngIf="quantity.maxLength(5)"><b>Password is required</b></div>-->
+            <!--<mat-error *ngIf="_contactForm.controls['quantity'].errors?.required">This field is mandatory.</mat-error>-->
+            <mat-error *ngIf="_contactForm.controls['quantity'].errors?.minlength">Minimum 1</mat-error>
+            <mat-error *ngIf="_contactForm.controls['quantity'].errors?.max">Maximum {{data.quantity}}</mat-error>
+
+          </div>
+
+
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <button type="submit" class="btn btn-success">
+              <i class="material-icons">
+                shopping_cart
+              </i>
+
+            </button>
+
+          </div>
+        </div>
+      </div>
+
+    </form>
+  </div>
+
+</mat-card-content>

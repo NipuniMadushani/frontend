@@ -1,0 +1,216 @@
+<!--<h4>Content from Server</h4>-->
+<!--{{board}}-->
+<!--{{errorMessage}}-->
+
+<div class="row marleft" style="margin-left: 30px" >
+<div class="col m4 s12" style="margin-top:15px; ">
+
+  <div class="col m12 s12" style="margin-top:15px">
+    <div class="col m12 s12 white mat-elevation-z4" style="border-radius:4px">
+      <div class="col m12 s12 mat-elevation-z8" style="margin-top:-20px;border-radius:4px;background:  linear-gradient(60deg, #26c6da, #00acc1);">
+        <h5 class="white-text">PRODUCT Detail Table </h5>
+        <h6 class="white-text">Here is a subtitle for this table </h6>
+
+      </div>
+
+      <div class="search-div">
+        <button mat-raised-button >
+          <mat-icon>add</mat-icon>Create
+        </button>
+        <mat-form-field class="search-form-field" floatLabel="never" style="margin-left: 20px">
+          <input matInput [(ngModel)]="searchKey" placeholder="Search" autocomplete="off" (keyup)="applyFilter()">
+          <button mat-button matSuffix mat-icon-button aria-label="Clear"*ngIf="searchKey"  (click)="onSearchClear()">
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field>
+      </div>
+      <table mat-table [dataSource]="dataSource" matSort>
+
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+
+        <!-- Id Column -->
+        <ng-container matColumnDef="id"  >
+          <th mat-header-cell *matHeaderCellDef class="table-head-fix" mat-sort-header class="hideId" > Id </th>
+          <td mat-cell *matCellDef="let element" class="hideId" > {{element.id}} </td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef class="table-head-fix" mat-sort-header> Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="brand">
+          <th mat-header-cell *matHeaderCellDef class="table-head-fix" mat-sort-header> Brand</th>
+          <td mat-cell *matCellDef="let element"> {{element.brand}} </td>
+        </ng-container>
+
+        <!-- Address Column -->
+        <ng-container matColumnDef="price">
+          <th mat-header-cell *matHeaderCellDef class="table-head-fix" mat-sort-header> Unit Price(RS) </th>
+          <td mat-cell *matCellDef="let element"> {{element.unitPrice}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="imageUrl" >
+          <th mat-header-cell *matHeaderCellDef class="table-head-fix" mat-sort-header  class="hideId"> Image </th>
+          <td mat-cell *matCellDef="let element" class="" class="hideId"> {{element.imageUrl}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="category">
+          <th mat-header-cell *matHeaderCellDef class="table-head-fix" mat-sort-header> Category </th>
+          <td mat-cell *matCellDef="let element"> {{element.categoryName}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="qty">
+          <th mat-header-cell *matHeaderCellDef class="table-head-fix" mat-sort-header>Qty.Available </th>
+          <td mat-cell *matCellDef="let element"> {{element.quantity}} </td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef class="table-head-fix"> Delete </th>
+          <td mat-cell *matCellDef="let row">
+
+            <button mat-icon-button color="warn"><mat-icon  (click)=" onDelete(row.id)">delete_outline</mat-icon>
+            </button>
+          </td>
+
+        </ng-container>
+
+        <ng-container matColumnDef="Edit" >
+          <th mat-header-cell *matHeaderCellDef class="table-head-fix" >Edit  </th>
+          <td mat-cell *matCellDef="let element;let i = index;" ><button  mat-icon-button  (click)="updateSubmit(element)">
+            <mat-icon>launch</mat-icon>
+          </button>   </td>
+        </ng-container>
+
+
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      <mat-paginator #paginator [length]="100" [pageSize]="3" [pageSizeOptions]="[3,10,15,20,30,50,80]" showFirstLastButtons>
+      </mat-paginator>
+
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+<mat-grid-list cols="2" rowHeight="500px">
+  <mat-grid-tile>
+
+    <div class="col m8 s12" style="margin-top:10px;margin-left: 470px;width: 700px">
+      <div class="col m12 s12 white mat-elevation-z4" style=" border-radius: 4px;margin-left:-200px;width: 700px">
+        <div class="col m12 s12 mat-elevation-z8" style="margin-top:-30px; border-radius:4px;background: linear-gradient(60deg, #ffa726, #fb8c00);">
+          <h5 class="white-text">Product Form</h5>
+          <h6 class="white-text">Edit Form</h6>
+        </div>
+        <div >
+          <mat-card-content >
+            <mat-card >
+              <form #productForm='ngForm'>
+                <mat-grid-list cols="2" rowHeight="300px">
+                  <mat-grid-tile>
+                    <div class="controles-container">
+                      <mat-form-field>
+                        <input  matInput placeholder="Product id" type="text" id="id" name="id"  [(ngModel)]="product.id" #userName="ngModel" (change)="logChange(userName)"
+                                minlength="3">
+
+                      </mat-form-field>
+
+                      <mat-form-field>
+                        <input  matInput placeholder="Product Name" type="text"   name="name" [(ngModel)]="product.name" >
+                      </mat-form-field>
+
+                      <mat-form-field>
+                        <input  matInput placeholder="Description" type="text" id="description" name="description" [(ngModel)]="product.description">
+                      </mat-form-field>
+
+                      <mat-form-field>
+                        <input  matInput placeholder="Unit Price" type="text" id="unitPrice" name="unitPrice" [(ngModel)]="product.unitPrice">
+                      </mat-form-field>
+
+                      <mat-form-field>
+                        <input  matInput placeholder="Brand" type="text" id="brand" name="brand" [(ngModel)]="product.brand">
+                      </mat-form-field>
+
+                    </div>
+                  </mat-grid-tile>
+                  <mat-grid-tile>
+                    <div class="controles-container">
+
+
+                      <mat-form-field>
+                        <input  matInput placeholder="Quantity" type="number" id="quantity" name="quantity" [(ngModel)]="product.quantity">
+                      </mat-form-field>
+
+
+                      <!--<mat-form-field>-->
+                      <!--<input  matInput placeholder="Image Url" type="text" id="imageurl" name="imageurl" [(ngModel)]="product.imageUrl">-->
+                      <!--</mat-form-field>-->
+
+
+
+                      <div class="form-group">
+                        <label >Category</label>
+                        <select #categoryName="ngModel" [(ngModel)]="product.categoryName" name="categoryName" class="form-control">
+                          <option value="category" selected>Select a category</option>
+                          <option *ngFor="let c of productHeader" [value]="c.name">{{c.name}}</option>
+                        </select>
+                      </div>
+
+
+                      <div class="form-group">
+                        <label for="imageUrl">Image URL</label>
+
+                        <input #imageUrl="ngModel" [(ngModel)]="product.imageUrl" name="imageUrl" id="imageUrl" type="text" class="form-control"  required url>
+                        <img src="https://img.icons8.com/bubbles/64/000000/link.png">
+                        <div class="alert alert-danger" *ngIf="imageUrl.touched && imageUrl.invalid">
+                          <div *ngIf="imageUrl.errors.required">Image URL is required.</div>
+                          <div *ngIf="imageUrl.errors.url">Please enter a valid URL.</div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </mat-grid-tile>
+                </mat-grid-list>
+                <button type="submit" mat-raised-button color="primary" (click)="saveCustomer()"> Add Product</button>&nbsp;
+                <!--&nbsp;&nbsp;-->
+
+                <button type="submit"  mat-raised-button color="primary" (click)="updateProduct(product)">Update Product</button>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <!--<button type="submit"  mat-raised-button color="primary" (click)="searchCustomer(customer.id)">Search</button>-->
+                <!--&nbsp;&nbsp;&nbsp;-->
+                <button type="submit" style="background-color: #ab47bc" mat-raised-button color="#ab47bc" (click)="onClear()">Clear</button>
+              </form>
+            </mat-card>
+
+          </mat-card-content>
+
+        </div>
+        </div>
+      </div>
+
+
+  </mat-grid-tile>
+
+
+
+  <mat-grid-tile>
+    <div *ngIf="product.name" class="card" style="width: 16rem;background-image: linear-gradient(-225deg, #FEAC5E 0%, #B8DCFF 48%,  #FEAC5E 100%, #FEAC5E )">
+      <img class="card-img-top" [src]="product.imageUrl"  *ngIf="product.imageUrl">
+      <div class="card-body">
+        <h4 class="card-title" >{{product.name}}</h4>
+        <h6 class="card-title" style="color:white ">{{product.description}}</h6>
+        <p class="card-text">{{product.unitPrice|currency:'USD':true}}</p>
+        <!--<a href="#" class="btn btn-primary">Go somewhere</a>-->
+      </div>
+    </div>
+  </mat-grid-tile>
+
+</mat-grid-list>

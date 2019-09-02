@@ -1,0 +1,92 @@
+@media only screen and (min-width: 600px) {
+  ::ng-deep .marleft{
+    margin-left:200px
+  }
+}
+.example-form {
+  min-width: 150px;
+  max-width: 600px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+@media only screen and (min-width: 600px) {
+  ::ng-deep .marleft{
+    margin-left:200px
+  }
+}
+
+.table-head-fix{
+  font-size:16px;
+  color: #fb8c00;
+}
+div.container{
+  margin: 0px 40px;
+}
+.fill-remaining-space{
+  flex: 1 1 auto;
+}
+.controles-container{
+  width: 70%;
+  padding: 5%;
+}
+#customers {
+
+  font-family: "Trebuchet MS", Arial, Helvetica, bold, sans-serif;
+  border-collapse: collapse;
+  width: 90%;
+  position:absolute;
+  left: 0;
+
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 10px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #7e3bd0;
+  color: white;
+}
+
+table {
+  width: 100%;
+
+}
+
+
+.hideId{
+  display: none;
+}
+
+
+
+
+.mat-elevation-z8{
+  overflow: initial;
+  max-height: 80%;
+}
+
+.main-card{
+  margin-top: 60px;
+
+}
+
+.ng-valid[required], .ng-valid.required  {
+  border-left: 2px solid #42A948; /* green */
+}
+
+.ng-invalid:not(form)  {
+  border-left: solid #a94442; /* red */
+}
